@@ -1,0 +1,128 @@
+/*参考URL : https://b-risk.jp/blog/2018/07/table-css/ */
+
+@media screen and (max-width: 640px) {
+    .scroll {
+        overflow-x: auto;
+    }
+    .tbl-r07 {
+        min-width: 640px;
+        margin: 0 10px 50px;
+    }
+    .tbl-r07 td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .scroll {
+        overflow-x: auto;
+    }
+    .tbl-r07 {
+        min-width: 960px;
+        margin: 0 10px 50px;
+    }
+    .tbl-r07 td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .scroll {
+        overflow-x: auto;
+    }
+    .tbl-r07 {
+        min-width: 1024px;
+        margin: 0 10px 50px;
+    }
+    .tbl-r07 td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .scroll {
+        overflow-x: auto;
+    }
+    .tbl-r07 {
+        min-width: 1240px;
+        margin: 0 10px 50px;
+    }
+    .tbl-r07 td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+@media screen and (max-width: 1510px) {
+    .scroll {
+        overflow-x: auto;
+    }
+    .tbl-r07 {
+        min-width: 1510px;
+        margin: 0 10px 50px;
+    }
+    .tbl-r07 td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+.calendar table{
+    width: 98%;
+    border-collapse:separate;
+    border-spacing: 0;
+
+}
+
+.calendar table th:first-child{
+    border-radius: 5px 0 0 0;
+    width: 6%;
+}
+
+.calendar table th:last-child{
+    border-radius: 0 5px 0 0;
+    border-right: 1px solid #3c6690;
+}
+
+.calendar table th{
+
+    text-align: center;
+    color:white;
+    background: linear-gradient(#aed2f0,#225588);
+    border-left: 1px solid #3c6690;
+    border-top: 1px solid #3c6690;
+    border-bottom: 1px solid #3c6690;
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+    width: 3%;
+    padding: 10px 0;
+}
+
+.calendar table td{
+    text-align: center;
+    border-left: 1px solid #a8b7c5;
+    border-bottom: 1px solid #a8b7c5;
+    border-top:none;
+    box-shadow: 0px -3px 5px 1px #eee inset;
+    width: 3%;
+    padding: 10px 0;
+}
+
+.calendar table td:last-child{
+    border-right: 1px solid #a8b7c5;
+}
+
+.calendar table tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+.calendar table tr:last-child td:last-child {
+    border-radius: 0 0 5px 0;
+}
+
+.week-target {
+    color: #ff9a8e;
+}
+
