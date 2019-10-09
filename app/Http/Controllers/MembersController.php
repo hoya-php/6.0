@@ -18,11 +18,11 @@ class MembersController extends Controller
     public function index(Request $request)
     {
 
-        $month = $request->month;
+        $month = $request -> month;
 
-        $year = $request->year;
+        $year = $request -> year;
 
-        $group_id = $request->group_id;
+        $group_id = $request -> group_id;
 
         if ($year == null) {
             // request 出来なかった場合
@@ -46,14 +46,14 @@ class MembersController extends Controller
         $Mem = new Members();
 
         //リストを作成する
-        $member_list = $Shi -> shifts_create($year, $month, $group_id, $lastDay, $Hol_list,$Mem_list);
+        $member_list = $Shi -> shifts_create($year, $month, $group_id, $lastDay, $Hol_list, $Mem_list, $shi_list);
 
         //作成したリストをDBに保存する
         $Mem -> shifts_update($year, $month, $group_id, $member_list);
 
-        //return redirect('/');
+        return redirect('/');
 
-        return view('members.index');
+        //return view('members.index');
     }
 
     /**
@@ -83,9 +83,9 @@ class MembersController extends Controller
      * @param $member
      * @return \Illuminate\Http\Response
      */
-    public function show(members $member)
+    public function show($id)
     {
-        return view('members.show', ['member' => $member]);
+        return view('members.show');
     }
 
     /**

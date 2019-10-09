@@ -41,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('members') }}">{{ __('Members') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('config') }}">{{ __('Config') }}</a>
+                    </li>
                     {{-- 認証関連のリンク --}}
                     @guest
                         {{-- 「ログイン」と「ユーザー登録」へのリンク --}}

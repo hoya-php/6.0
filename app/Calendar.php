@@ -111,11 +111,11 @@ EOS;
 
         $shi = new \App\Shifts();
 
-        $tag = $shi->show_shifter_tag($this->html,$month, $year, $lastDay,$Hol_list,$Mem_list);
+        $tag = $shi->show_shifter_tag($this->html, $month, $year, $lastDay, $Hol_list, $Mem_list);
 
-        $this->html = $tag;
+        $this -> html = $tag;
 
-        $this->html .= '</table>';
+        $this -> html .= '</table>';
 
         return $this->html .= '</div>';
     }

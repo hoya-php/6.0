@@ -11,7 +11,7 @@ class Shifts extends Model
 {
     private $html;
 
-    public function show_shifter_tag($h,$m,$y,$lad,$Hol_list,$Mem_list){
+    public function show_shifter_tag($h, $m, $y, $lad, $Hol_list, $Mem_list){
 
         $this -> html = $h;
         $year = $y;
@@ -87,16 +87,25 @@ class Shifts extends Model
 
     }
 
-    public function shifts_create($y, $m, $id, $la,$Hol_list,$Mem_list){
+    public function shifts_create($y, $m, $id, $lad, $Hol_list, $Mem_list, $shi_list){
         //必要情報の取得
 
-        $shift_count = 3;
+        $shift_count =  $shi_list -> count();
         $member_count = $Mem_list -> count();
 
         $member_list = [];
+        $shift_list =[];
+        $i = 0;
+
+        foreach($shi_list as $shi){
+
+            $shift_list[$i] = $shi -> name;
+            $i++;
+
+        }
 
         //シフトの自動作成
-        for($day = 1; $day <= $la; $day++){
+        for($day = 1; $day <= $lad; $day++){
 
             //すでに抽選されたメンバを除外
             $no_day_member = "除外";
@@ -122,16 +131,28 @@ class Shifts extends Model
                         $all_shifts_count = 0;
                         $selected_shifts_count = 0;
 
-                        //for($day_count = 1; $day_count < $day; $day_count++){
-
+                        for($day_count = 1; $day_count < $day; $day_count++) {
                             //シフトをカウントする
+                            if(isset($member_list[$member_number][$day_count])){
 
-                        //}
+                                if ($member_list[$member_number][$day_count] != ""){
+
+                                    $all_shifts_count++;
+
+                                } elseif ($member_list[$member_number][$day_count] == $shift_list[$shift_number]) {
+
+                                    $selected_shifts_count++;
+
+                                }
+                            }
+                        }
+
 
                         //メンバ抽選用変数を作成　-> arrangement_shift
                         //各ユーザごとに比較する(最小値を記録したメンバを記録)
+                        //カウント変数を引用し、抽選結果を平均化する
 
-                        $arrangement_shift = (($all_shifts_count * 1.2)) + (($selected_shifts_count * 0.9)) + (rand(2, 99) / 100);
+                        $arrangement_shift = (($all_shifts_count * 1.2) ** 2) + (($selected_shifts_count * 0.9) ** 2) + (rand(2, 99) / 100);
 
                         //日別除外リスト確認
                         if(strpos($no_day_member,"<".$member_number.">") === false){
@@ -152,7 +173,7 @@ class Shifts extends Model
 
                     }else{
 
-                        $member_list[$day_member_select_id][$day] = $shift_number;
+                        $member_list[$day_member_select_id][$day] = $shift_list[$shift_number];
 
                         //当選メンバ除外
                         $no_day_member .= "<".$day_member_select_id.">";

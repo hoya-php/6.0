@@ -8,12 +8,12 @@
 
         {{-- 編集・削除ボタン --}}
         <div class="edit">
-            <a href="{{ url('members/'.$member->id.'/edit') }}" class="btn btn-primary">
+            <a href="{{ url('members/'.$member -> id.'/edit') }}" class="btn btn-primary">
                 {{ __('Edit') }}
             </a>
             @component('components.btn-del')
-                @slot('name', 'group_id')
-                @slot('id', $member->id)
+                @slot('name', $member -> name)
+                @slot('id', $member -> id)
             @endcomponent
         </div>
 

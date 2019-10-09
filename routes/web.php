@@ -37,7 +37,7 @@ Route::get('/shifts/create','MembersController@index');
 
 //メンバー管理ルート
 //参考 https://qiita.com/sutara79/items/4d4854d0f1137aed20d4
-Route::resource('/members', 'MembersController');
+Route::get('/members', 'MembersController@show');
 
 
 //auth
