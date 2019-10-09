@@ -42,7 +42,7 @@
             "database/factories"
         ],
         "files": [
-            "App/Calendar.php",
+
             "App/Shifts.php",
             "App/Members.php"
         ]
