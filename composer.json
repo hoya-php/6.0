@@ -41,11 +41,7 @@
             "database/seeds",
             "database/factories"
         ],
-        "files": [
 
-            "App/Shifts.php",
-            "App/Members.php"
-        ]
     },
     "autoload-dev": {
         "psr-4": {
